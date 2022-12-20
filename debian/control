@@ -1,0 +1,59 @@
+Source: haskell-digest
+Maintainer: Debian Haskell Group <pkg-haskell-maintainers@lists.alioth.debian.org>
+Uploaders: Joachim Breitner <nomeata@debian.org>
+Priority: optional
+Section: haskell
+Rules-Requires-Root: no
+Build-Depends: debhelper (>= 10),
+ haskell-devscripts (>= 0.13),
+ cdbs,
+ ghc (>= 8),
+ ghc-prof,
+ zlib1g-dev,
+Build-Depends-Indep: ghc-doc,
+Standards-Version: 4.5.0
+Homepage: http://hackage.haskell.org/package/digest
+Vcs-Browser: https://salsa.debian.org/haskell-team/DHG_packages/tree/master/p/haskell-digest
+Vcs-Git: https://salsa.debian.org/haskell-team/DHG_packages.git [p/haskell-digest]
+
+Package: libghc-digest-dev
+Architecture: any
+Depends: ${haskell:Depends},
+ ${shlibs:Depends},
+ ${misc:Depends},
+ zlib1g-dev,
+Suggests: ${haskell:Suggests},
+Provides: ${haskell:Provides},
+Description: efficient cryptographic hash implementations for bytestrings${haskell:ShortBlurb}
+ This package provides efficient cryptographic hash implementations for strict
+ and lazy bytestrings. For now, CRC32 and Adler32 are supported; they are
+ implemented as FFI bindings to efficient code from zlib.
+ .
+ ${haskell:Blurb}
+
+Package: libghc-digest-prof
+Architecture: any
+Depends: ${haskell:Depends},
+ ${shlibs:Depends},
+ ${misc:Depends},
+Provides: ${haskell:Provides},
+Description: efficient cryptographic hash implementations bytestrings${haskell:ShortBlurb}
+ This package provides efficient cryptographic hash implementations for strict
+ and lazy bytestrings. For now, CRC32 and Adler32 are supported; they are
+ implemented as FFI bindings to efficient code from zlib.
+ .
+ ${haskell:Blurb}
+
+Package: libghc-digest-doc
+Architecture: all
+Section: doc
+Depends: ${haskell:Depends},
+ ${misc:Depends},
+Recommends: ${haskell:Recommends},
+Suggests: ${haskell:Suggests},
+Description: efficient cryptographic hash implementations bytestrings${haskell:ShortBlurb}
+ This package provides efficient cryptographic hash implementations for strict
+ and lazy bytestrings. For now, CRC32 and Adler32 are supported; they are
+ implemented as FFI bindings to efficient code from zlib.
+ .
+ ${haskell:Blurb}
